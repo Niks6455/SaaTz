@@ -4,10 +4,16 @@
 
 :root {
   --color-primary: #91ff00;
+  --bg-page: #0a0a0a;
+  --bg-card: #171717;
+  --bg-input: #262626;
+  --border-input: #404040;
+  --text-primary: #fafafa;
+  --text-muted: #a1a1a1;
   font-family: system-ui, -apple-system, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  color-scheme: light;
+  color-scheme: dark;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -24,10 +30,100 @@
   body {
     margin: 0;
     min-height: 100vh;
+    color: var(--text-primary);
+    background-color: var(--bg-page);
   }
 
   #app {
     min-height: 100vh;
     color: inherit;
   }
+}
+
+.p-inputtext,
+.p-password input {
+  background-color: var(--bg-input) !important;
+  border-color: var(--border-input) !important;
+  color: var(--text-primary) !important;
+  width: 100%;
+  border-radius: 0.5rem;
+}
+
+.p-inputtext::placeholder,
+.p-password input::placeholder {
+  color: var(--text-muted);
+}
+
+.p-inputtext:enabled:hover,
+.p-password input:enabled:hover {
+  border-color: #525252 !important;
+}
+
+.p-inputtext:enabled:focus,
+.p-password input:enabled:focus {
+  border-color: var(--color-primary) !important;
+  box-shadow: 0 0 0 1px var(--color-primary) !important;
+}
+
+.p-inputtext.input-invalid,
+.p-inputtext.input-invalid:enabled:focus,
+.p-password.input-invalid input,
+.p-password.input-invalid input:enabled:focus {
+  border-color: #ef4444 !important;
+  box-shadow: 0 0 0 1px #ef4444 !important;
+}
+
+.p-dropdown {
+  background-color: var(--bg-input) !important;
+  border-color: var(--border-input) !important;
+}
+
+.p-dropdown .p-dropdown-label {
+  color: var(--text-primary) !important;
+}
+
+.p-dropdown:not(.p-disabled):hover {
+  border-color: #525252 !important;
+}
+
+.p-dropdown:not(.p-disabled).p-focus,
+.p-select:not(.p-disabled).p-focus {
+  border-color: var(--color-primary) !important;
+  box-shadow: 0 0 0 1px var(--color-primary) !important;
+}
+
+.p-select {
+  background-color: var(--bg-input) !important;
+  border-color: var(--border-input) !important;
+}
+
+.p-select .p-select-label {
+  color: var(--text-primary) !important;
+}
+
+.p-select:not(.p-disabled):hover {
+  border-color: #525252 !important;
+}
+
+.p-button {
+  border-radius: 0.5rem;
+}
+
+.p-button.p-button-primary {
+  background: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
+  color: #0a0a0a !important;
+}
+
+.p-button.p-button-primary:hover {
+  filter: brightness(1.1);
+}
+
+.p-button.p-button-danger.p-button-outlined {
+  border-color: #f87171 !important;
+  color: #f87171 !important;
+}
+
+.p-button.p-button-danger.p-button-outlined:hover {
+  background: rgba(248, 113, 113, 0.1) !important;
 }
