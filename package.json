@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "zod": "^3.23.8",
     "pinia": "^2.2.6",
     "pinia-plugin-persistedstate": "^3.2.1",
     "@primeuix/themes": "^2.0.0",
